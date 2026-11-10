@@ -1,0 +1,117 @@
+[35msrc/openjarvis/agents/channel_agent.py[m[36m:[m[32m58[m[36m:[m_ESCALATION_TEMPLATE = "{preview}...\n\n---\nFull report ready — open in [1;31mOpenJarvis[m:\nopenjarvis://research/{session_id}"
+[35msrc/openjarvis/agents/claude_code_runner/index.mjs[m[36m:[m[32m2[m[36m:[m * [1;31mOpenJarvis[m Claude Agent SDK runner.
+[35msrc/openjarvis/agents/deep_research.py[m[36m:[m[32m100[m[36m:[m"what do I know about [1;31mOpenJarvis[m?". Search a topic across ALL sources \
+[35msrc/openjarvis/agents/hybrid/README.md[m[36m:[m[32m4[m[36m:[mharness — each is registered as a standard [1;31mOpenJarvis[m agent so the rest
+[35msrc/openjarvis/agents/hybrid/README.md[m[36m:[m[32m18[m[36m:[mItems in parentheses are what the *paper* trains. These [1;31mOpenJarvis[m ports
+[35msrc/openjarvis/agents/hybrid/README.md[m[36m:[m[32m49[m[36m:[mcd [1;31mOpenJarvis[m
+[35msrc/openjarvis/agents/hybrid/README.md[m[36m:[m[32m99[m[36m:[mthese [1;31mOpenJarvis[m cells should reproduce the harness numbers within
+[35msrc/openjarvis/agents/hybrid/__init__.py[m[36m:[m[32m19[m[36m:[mimplementation and stays untouched — these ports are the [1;31mOpenJarvis[m-native
+[35msrc/openjarvis/agents/hybrid/_base.py[m[36m:[m[32m8[m[36m:[mWhy not just use [1;31mOpenJarvis[m's :class:`InferenceEngine` for both? Two reasons:
+[35msrc/openjarvis/agents/hybrid/_base.py[m[36m:[m[32m116[m[36m:[m    """Run [1;31mOpenJarvis[m WebSearchTool and return accounting-friendly metadata."""
+[35msrc/openjarvis/agents/hybrid/_base.py[m[36m:[m[32m626[m[36m:[m        pass the [1;31mOpenJarvis[m-engine-style ``"openrouter/<provider>/<model>"``
+[35msrc/openjarvis/agents/hybrid/_prices.py[m[36m:[m[32m7[m[36m:[mthe [1;31mOpenJarvis[m ports to charge identically.
+[35msrc/openjarvis/agents/hybrid/archon.py[m[36m:[m[32m80[m[36m:[m    libraries aren't installed in the [1;31mOpenJarvis[m venv."""
+[35msrc/openjarvis/agents/hybrid/registry/toolorchestra.toml[m[36m:[m[32m85[m[36m:[m#   - search       -> Tavily API (TAVILY_API_KEY in [1;31mOpenJarvis[m/.env)
+[35msrc/openjarvis/agents/hybrid/runner.py[m[36m:[m[32m9[m[36m:[mthe registered agent, loads bench tasks via [1;31mOpenJarvis[m's existing dataset
+[35msrc/openjarvis/agents/hybrid/runner.py[m[36m:[m[32m14[m[36m:[mexisting rescore / dashboard scripts can read [1;31mOpenJarvis[m cells without
+[35msrc/openjarvis/agents/hybrid/runner.py[m[36m:[m[32m138[m[36m:[m        # [1;31mOpenJarvis[m prefixes with `gaia-`) so subsets keyed by the upstream
+[35msrc/openjarvis/agents/hybrid/runner.py[m[36m:[m[32m292[m[36m:[m    Uses the shared [1;31mOpenJarvis[m :class:`GAIAScorer`. The previous version
+[35msrc/openjarvis/agents/hybrid/skillorchestra.py[m[36m:[m[32m13[m[36m:[mscope for the [1;31mOpenJarvis[m port (and was out of scope in the hybrid harness).
+[35msrc/openjarvis/agents/hybrid/skillorchestra/agent.py[m[36m:[m[32m1[m[36m:[m"""SkillOrchestraAgent — the [1;31mOpenJarvis[m harness entry point.
+[35msrc/openjarvis/agents/hybrid/skillorchestra/pool.py[m[36m:[m[32m6[m[36m:[mvia SGLang. [1;31mOpenJarvis[m runs a 2-model world (one local vLLM student + one
+[35msrc/openjarvis/agents/hybrid/skillorchestra/tools.py[m[36m:[m[32m5[m[36m:[mboth forced by the [1;31mOpenJarvis[m environment and documented inline:
+[35msrc/openjarvis/agents/hybrid/skillorchestra/tools.py[m[36m:[m[32m12[m[36m:[m  prediction against the gold answer inside ``call_tool``. [1;31mOpenJarvis[m
+[35msrc/openjarvis/agents/hybrid/skillorchestra/tools.py[m[36m:[m[32m249[m[36m:[m    in-tool LLM correctness check is dropped — [1;31mOpenJarvis[m scores
+[35msrc/openjarvis/agents/hybrid/skillorchestra/tools.py[m[36m:[m[32m333[m[36m:[m    [1;31mOpenJarvis[m substitution for the missing FAISS wiki index).
+[35msrc/openjarvis/agents/hybrid/toolorchestra.py[m[36m:[m[32m186[m[36m:[m# Map the orchestrator's `model` slot to a concrete [1;31mOpenJarvis[m worker spec.
+[35msrc/openjarvis/agents/hybrid/toolorchestra.py[m[36m:[m[32m375[m[36m:[m    Token counts are reported as zero (no LLM was billed); the [1;31mOpenJarvis[m
+[35msrc/openjarvis/agents/native_openhands.py[m[36m:[m[32m3[m[36m:[mRenamed from ``OpenHandsAgent`` to clarify this is [1;31mOpenJarvis[m's native
+[35msrc/openjarvis/agents/native_react.py[m[36m:[m[32m3[m[36m:[mRenamed from ``ReActAgent`` to clarify this is [1;31mOpenJarvis[m's native
+[35msrc/openjarvis/agents/opencode.py[m[36m:[m[32m4[m[36m:[mHTTP API, configured to use [1;31mOpenJarvis[m's local engine through an
+[35msrc/openjarvis/agents/opencode.py[m[36m:[m[32m6[m[36m:[mhandles the agentic loop / tools, [1;31mOpenJarvis[m supplies the model.
+[35msrc/openjarvis/agents/opencode.py[m[36m:[m[32m43[m[36m:[m    """Best-effort OpenAI-compatible base URL for an [1;31mOpenJarvis[m engine.
+[35msrc/openjarvis/agents/opencode.py[m[36m:[m[32m85[m[36m:[m    """Map opencode ``tool`` parts to [1;31mOpenJarvis[m ToolResults (supports V1 and V2)."""
+[35msrc/openjarvis/agents/opencode.py[m[36m:[m[32m156[m[36m:[m    inference runs on [1;31mOpenJarvis[m's selected local model. ``agent`` selects
+[35msrc/openjarvis/agents/opencode.py[m[36m:[m[32m266[m[36m:[m                    "name": "[1;31mOpenJarvis[m Local",
+[35msrc/openjarvis/agents/prompt_loader.py[m[36m:[m[32m27[m[36m:[m    """Resolve the [1;31mOpenJarvis[m root, honoring OPENJARVIS_HOME / XDG_DATA_HOME."""
+[35msrc/openjarvis/agents/rlm.py[m[36m:[m[32m45[m[36m:[m    "[1;31mOpenJarvis[m tool and return its textual output.\n"
+[35msrc/openjarvis/agents/rlm.py[m[36m:[m[32m435[m[36m:[m        """Execute a real [1;31mOpenJarvis[m tool from within the REPL."""
+[35msrc/openjarvis/agents/rlm_repl.py[m[36m:[m[32m147[m[36m:[m        """Execute an injected [1;31mOpenJarvis[m tool from within the REPL.
+[35msrc/openjarvis/agents/scheduler.py[m[36m:[m[32m36[m[36m:[m            "croniter is required for cron schedules; reinstall [1;31mOpenJarvis[m"
+[35msrc/openjarvis/cli/__init__.py[m[36m:[m[32m1[m[36m:[m"""Command-line interface for [1;31mOpenJarvis[m (Click-based)."""
+[35msrc/openjarvis/cli/__init__.py[m[36m:[m[32m38[m[36m:[m    help="[1;31mOpenJarvis[m — modular AI assistant backend",
+[35msrc/openjarvis/cli/_analytics_consent.py[m[36m:[m[32m17[m[36m:[m        "\nHelp improve [1;31mOpenJarvis[m by sharing optional usage statistics.\n"
+[35msrc/openjarvis/cli/_analytics_consent.py[m[36m:[m[32m20[m[36m:[m        "Recipient: the [1;31mOpenJarvis[m team's PostHog analytics endpoint.\n"
+[35msrc/openjarvis/cli/_analytics_consent.py[m[36m:[m[32m21[m[36m:[m        "Privacy details: https://open-jarvis.github.io/[1;31mOpenJarvis[m/telemetry/\n"
+[35msrc/openjarvis/cli/_analytics_consent.py[m[36m:[m[32m24[m[36m:[m        "Declining does not change [1;31mOpenJarvis[m functionality.",
+[35msrc/openjarvis/cli/_banner.py[m[36m:[m[32m1[m[36m:[m"""Startup banner — [1;31mOpenJarvis[m wordmark + tagline."""
+[35msrc/openjarvis/cli/_banner.py[m[36m:[m[32m5[m[36m:[m# "[1;31mOpenJarvis[m" rendered in the figlet "standard" font. Stored as plain text
+[35msrc/openjarvis/cli/_banner.py[m[36m:[m[32m24[m[36m:[m    """Print the [1;31mOpenJarvis[m startup banner. No-op when quiet."""
+[35msrc/openjarvis/cli/_bootstrap.py[m[36m:[m[32m138[m[36m:[m        f"# [1;31mOpenJarvis[m configuration\n"
+[35msrc/openjarvis/cli/_install_detect.py[m[36m:[m[32m1[m[36m:[m"""Detect how [1;31mOpenJarvis[m was installed so we can show the right upgrade
+[35msrc/openjarvis/cli/_install_detect.py[m[36m:[m[32m32[m[36m:[m    """How [1;31mOpenJarvis[m was installed."""
+[35msrc/openjarvis/cli/_version_check.py[m[36m:[m[32m1[m[36m:[m"""Check for newer [1;31mOpenJarvis[m releases on PyPI."""
+[35msrc/openjarvis/cli/_version_check.py[m[36m:[m[32m141[m[36m:[m                f"\033[33mA new version of [1;31mOpenJarvis[m is available "
+[35msrc/openjarvis/cli/_voice_chat.py[m[36m:[m[32m142[m[36m:[m            "pip install '[1;31mOpenJarvis[m[speech]', or configure a healthy "
+[35msrc/openjarvis/cli/ask.py[m[36m:[m[32m38[m[36m:[m# below: a screenshot is sensitive and [1;31mOpenJarvis[m is local-first, so sending
+[35msrc/openjarvis/cli/chat_cmd.py[m[36m:[m[32m306[m[36m:[m        f"[green bold][1;31mOpenJarvis[m Chat[/green bold]\n"
+[35msrc/openjarvis/cli/compose_cmd.py[m[36m:[m[32m15[m[36m:[m    """Compose, run, benchmark, and deploy [1;31mOpenJarvis[m configurations.
+[35msrc/openjarvis/cli/config_cmd.py[m[36m:[m[32m281[m[36m:[m    """Print the resolved [1;31mOpenJarvis[m directories (home, config, cache).
+[35msrc/openjarvis/cli/config_cmd.py[m[36m:[m[32m283[m[36m:[m    All [1;31mOpenJarvis[m state lives under a single root, resolved in priority
+[35msrc/openjarvis/cli/daemon_cmd.py[m[36m:[m[32m370[m[36m:[m    """Manage the [1;31mOpenJarvis[m server daemon."""
+[35msrc/openjarvis/cli/daemon_cmd.py[m[36m:[m[32m386[m[36m:[m    """Start the [1;31mOpenJarvis[m server as a background daemon."""
+[35msrc/openjarvis/cli/daemon_cmd.py[m[36m:[m[32m471[m[36m:[m        f"[green][1;31mOpenJarvis[m server starting[/green] (launch PID {proc.pid})\n"
+[35msrc/openjarvis/cli/daemon_cmd.py[m[36m:[m[32m479[m[36m:[m    """Stop the running [1;31mOpenJarvis[m server daemon."""
+[35msrc/openjarvis/cli/daemon_cmd.py[m[36m:[m[32m509[m[36m:[m    """Restart the [1;31mOpenJarvis[m server daemon."""
+[35msrc/openjarvis/cli/daemon_cmd.py[m[36m:[m[32m529[m[36m:[m    """Show status of the [1;31mOpenJarvis[m server daemon."""
+[35msrc/openjarvis/cli/dashboard.py[m[36m:[m[32m12[m[36m:[m    """Terminal dashboard for [1;31mOpenJarvis[m monitoring.
+[35msrc/openjarvis/cli/dashboard.py[m[36m:[m[32m58[m[36m:[m            """[1;31mOpenJarvis[m TUI Dashboard."""
+[35msrc/openjarvis/cli/dashboard.py[m[36m:[m[32m60[m[36m:[m            TITLE = "[1;31mOpenJarvis[m Dashboard"
+[35msrc/openjarvis/cli/doctor_cmd.py[m[36m:[m[32m1[m[36m:[m"""``jarvis doctor`` — run diagnostic checks on the [1;31mOpenJarvis[m installation."""
+[35msrc/openjarvis/cli/doctor_cmd.py[m[36m:[m[32m395[m[36m:[m    """Run diagnostic checks on your [1;31mOpenJarvis[m installation."""
+[35msrc/openjarvis/cli/doctor_cmd.py[m[36m:[m[32m404[m[36m:[m    console.print("[bold][1;31mOpenJarvis[m Doctor[/bold]")
+[35msrc/openjarvis/cli/gateway_cmd.py[m[36m:[m[32m13[m[36m:[m    """Manage the [1;31mOpenJarvis[m multi-channel gateway."""
+[35msrc/openjarvis/cli/gateway_cmd.py[m[36m:[m[32m57[m[36m:[m        click.echo("Starting [1;31mOpenJarvis[m gateway (foreground)...")
+[35msrc/openjarvis/cli/gui_cmd.py[m[36m:[m[32m378[m[36m:[m        f"[1;31mOpenJarvis[m.{held_by} Stop it, or choose another port with "
+[35msrc/openjarvis/cli/gui_cmd.py[m[36m:[m[32m470[m[36m:[m    application, launch [1;31mOpenJarvis[m from the operating system menu instead.
+[35msrc/openjarvis/cli/gui_cmd.py[m[36m:[m[32m477[m[36m:[m            "Download the [1;31mOpenJarvis[m desktop app or run this command "
+[35msrc/openjarvis/cli/gui_cmd.py[m[36m:[m[32m490[m[36m:[m    # not start the [1;31mOpenJarvis[m API server." Adopt it instead.
+[35msrc/openjarvis/cli/gui_cmd.py[m[36m:[m[32m496[m[36m:[m                "intend to use an externally managed [1;31mOpenJarvis[m backend."
+[35msrc/openjarvis/cli/gui_cmd.py[m[36m:[m[32m526[m[36m:[m            raise click.ClickException("Could not start the [1;31mOpenJarvis[m API server.")
+[35msrc/openjarvis/cli/gui_cmd.py[m[36m:[m[32m574[m[36m:[m        console.print(f"[green][1;31mOpenJarvis[m graphical mode is ready:[/green] {url}")
+[35msrc/openjarvis/cli/host_cmd.py[m[36m:[m[32m400[m[36m:[m            "[dim][1;31mOpenJarvis[m will auto-discover it. Press Ctrl+C to stop.[/dim]\n"
+[35msrc/openjarvis/cli/log_config.py[m[36m:[m[32m1[m[36m:[m"""Global logging configuration for the [1;31mOpenJarvis[m CLI."""
+[35msrc/openjarvis/cli/optimize_cmd.py[m[36m:[m[32m80[m[36m:[m    """Run an optimization loop over [1;31mOpenJarvis[m configuration."""
+[35msrc/openjarvis/cli/scan_cmd.py[m[36m:[m[32m495[m[36m:[m    console.print("[bold][1;31mOpenJarvis[m Security Scan[/bold]")
+[35msrc/openjarvis/cli/scan_cmd.py[m[36m:[m[32m526[m[36m:[m            "before storing sensitive data with [1;31mOpenJarvis[m."
+[35msrc/openjarvis/cli/scan_cmd.py[m[36m:[m[32m548[m[36m:[m    console.print("[bold][1;31mOpenJarvis[m Data-Boundary Scan[/bold]")
+[35msrc/openjarvis/cli/scheduler_cmd.py[m[36m:[m[32m234[m[36m:[m    when [1;31mOpenJarvis[m is not running as a persistent daemon.
+[35msrc/openjarvis/cli/self_update_cmd.py[m[36m:[m[32m1[m[36m:[m"""`jarvis self-update` — upgrade [1;31mOpenJarvis[m to the latest release.
+[35msrc/openjarvis/cli/self_update_cmd.py[m[36m:[m[32m3[m[36m:[mRuns the right upgrade command for how the user installed [1;31mOpenJarvis[m:
+[35msrc/openjarvis/cli/self_update_cmd.py[m[36m:[m[32m8[m[36m:[m  [1;31mOpenJarvis[m in the running environment. The inexact sync preserves packages
+[35msrc/openjarvis/cli/self_update_cmd.py[m[36m:[m[32m57[m[36m:[m    click.echo("Rebuilding [1;31mOpenJarvis[m in the running Python environment...")
+[35msrc/openjarvis/cli/self_update_cmd.py[m[36m:[m[32m95[m[36m:[m        "Upgrade [1;31mOpenJarvis[m to the latest release. Detects how you "
+[35msrc/openjarvis/cli/self_update_cmd.py[m[36m:[m[32m116[m[36m:[m    click.echo(f"Current [1;31mOpenJarvis[m version: v{current}")
+[35msrc/openjarvis/cli/self_update_cmd.py[m[36m:[m[32m122[m[36m:[m            "then rebuild [1;31mOpenJarvis[m while preserving installed extras."
+[35msrc/openjarvis/cli/serve.py[m[36m:[m[32m161[m[36m:[m    # Tool credentials saved through the browser UI live in the [1;31mOpenJarvis[m
+[35msrc/openjarvis/cli/serve.py[m[36m:[m[32m777[m[36m:[m        f"[green]Starting [1;31mOpenJarvis[m API server[/green]\n"
+[35msrc/openjarvis/core/config.py[m[36m:[m[32m756[m[36m:[m    # most [1;31mOpenJarvis[m users have credentials for.
+[35msrc/openjarvis/core/config.py[m[36m:[m[32m1146[m[36m:[m        "who or what you are, identify yourself as [1;31mOpenJarvis[m. Respond "
+[35msrc/openjarvis/core/config.py[m[36m:[m[32m1216[m[36m:[m    usage events sent to the [1;31mOpenJarvis[m team's PostHog instance to
+[35msrc/openjarvis/core/config.py[m[36m:[m[32m1771[m[36m:[m    """Top-level configuration for [1;31mOpenJarvis[m."""
+[35msrc/openjarvis/core/config.py[m[36m:[m[32m2194[m[36m:[m# [1;31mOpenJarvis[m configuration
+[35msrc/openjarvis/core/config.py[m[36m:[m[32m2227[m[36m:[m# [1;31mOpenJarvis[m configuration
+[35msrc/openjarvis/core/credentials.py[m[36m:[m[32m31[m[36m:[m    """Resolve the credentials file under the [1;31mOpenJarvis[m root (env-aware)."""
+[35msrc/openjarvis/core/paths.py[m[36m:[m[32m1[m[36m:[m"""Central, env-aware resolution of [1;31mOpenJarvis[m' home directory.
+[35msrc/openjarvis/core/paths.py[m[36m:[m[32m3[m[36m:[m[1;31mOpenJarvis[m keeps all of its runtime state (config, databases, caches, logs,
+[35msrc/openjarvis/core/paths.py[m[36m:[m[32m24[m[36m:[mDefense in depth: the resolved root must never live inside the [1;31mOpenJarvis[m
+[35msrc/openjarvis/core/paths.py[m[36m:[m[32m45[m[36m:[m    """Walk upward from this module to find the [1;31mOpenJarvis[m source root.
+[35msrc/openjarvis/core/paths.py[m[36m:[m[32m47[m[36m:[m    Returns the directory containing the [1;31mOpenJarvis[m ``pyproject.toml`` (the one
+[35msrc/openjarvis/core/paths.py[m[36m:[m[32m65[m[36m:[m    """Raise if ``path`` resolves inside the [1;31mOpenJarvis[m source tree."""
+[35msrc/openjarvis/core/paths.py[m[36m:[m[32m74[m[36m:[m                f"[1;31mOpenJarvis[m home ({path}) is inside the source tree "
+[35msrc/openjarvis/core/paths.py[m[36m:[m[32m75[m[36m:[m                f"({source_root}). [1;31mOpenJarvis[m refuses to write runtime state "
+[35msrc/openjarvis/core/paths.py[m[36m:[m[32m83[m[36m:[m    """Resolve [1;31mOpenJarvis[m' single root directory, honoring env overrides.
+[35msrc/openjarvis/core/paths.py[m[36m:[m[32m87[m[36m:[m    falls inside the [1;31mOpenJarvis[m source tree.
+[35msrc/openjarvis/core/paths.py[m[36m:[m[32m103[m[36m:[m    """Resolve the path to ``config.toml`` under the [1;31mOpenJarvis[m root."""
+[35msrc/openjarvis/core/paths.py[m[36m:[m[32m119[m[36m:[m    Lives at ``<root>/cache`` so caches stay inside the single [1;31mOpenJarvis[m
+[35msrc/openjarvis/core/types.py[m[36m:[m[32m1[m[36m:[m"""Canonical data types shared across all [1;31mOpenJarvis[m primitives."""
