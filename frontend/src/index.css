@@ -23,10 +23,10 @@
     --color-text-tertiary: #a1a1aa;
     --color-text-inverse: #fafafa;
 
-    --color-accent: #0891b2;
-    --color-accent-hover: #0e7490;
-    --color-accent-subtle: rgba(8, 145, 178, 0.08);
-    --color-accent-glow: rgba(8, 145, 178, 0.25);
+    --color-accent: #c8102e;
+    --color-accent-hover: #a30d25;
+    --color-accent-subtle: rgba(200, 16, 46, 0.08);
+    --color-accent-glow: rgba(200, 16, 46, 0.25);
 
     --color-accent-amber: #f59e0b;
     --color-accent-amber-hover: #d97706;
@@ -34,7 +34,7 @@
     --color-accent-purple: #8b5cf6;
     --color-accent-purple-hover: #7c3aed;
     --color-accent-purple-subtle: rgba(139, 92, 246, 0.1);
-    --color-accent-blue-subtle: rgba(8, 145, 178, 0.08);
+    --color-accent-blue-subtle: rgba(200, 16, 46, 0.08);
 
     --color-success: #16a34a;
     --color-warning: #ca8a04;
@@ -44,7 +44,7 @@
     --color-input-bg: #ffffff;
     --color-input-border: #d4d4d8;
 
-    --color-user-bubble: #0891b2;
+    --color-user-bubble: #c8102e;
     --color-user-bubble-text: #ffffff;
     --color-on-accent: #ffffff;
     --color-disabled-bg: #e4e4e7;
@@ -82,10 +82,10 @@
     --color-text-tertiary: #5c5c63;
     --color-text-inverse: #0a0a0b;
 
-    --color-accent: #22d3ee;
-    --color-accent-hover: #67e8f9;
-    --color-accent-subtle: rgba(34, 211, 238, 0.1);
-    --color-accent-glow: rgba(34, 211, 238, 0.3);
+    --color-accent: #e01e37;
+    --color-accent-hover: #ff4d63;
+    --color-accent-subtle: rgba(224, 30, 55, 0.1);
+    --color-accent-glow: rgba(224, 30, 55, 0.3);
 
     --color-accent-amber: #f5a524;
     --color-accent-amber-hover: #fbbf24;
@@ -93,7 +93,7 @@
     --color-accent-purple: #b794ff;
     --color-accent-purple-hover: #c9b0ff;
     --color-accent-purple-subtle: rgba(183, 148, 255, 0.12);
-    --color-accent-blue-subtle: rgba(79, 209, 255, 0.12);
+    --color-accent-blue-subtle: rgba(224, 30, 55, 0.12);
 
     --color-success: #3ddc97;
     --color-warning: #f5a524;
@@ -101,16 +101,16 @@
 
     --color-code-bg: #0c121a;
     --color-input-bg: #0c121a;
-    --color-input-border: rgba(79, 209, 255, 0.12);
+    --color-input-border: rgba(224, 30, 55, 0.12);
 
-    --color-user-bubble: rgba(79, 209, 255, 0.14);
+    --color-user-bubble: rgba(224, 30, 55, 0.14);
     --color-user-bubble-text: #e6f1ff;
     --color-on-accent: #070b11;
     --color-disabled-bg: #121a24;
 
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.4);
-    --shadow-md: 0 4px 14px -2px rgb(0 0 0 / 0.5), 0 0 0 1px rgba(79, 209, 255, 0.04);
-    --shadow-lg: 0 18px 40px -12px rgb(0 0 0 / 0.7), 0 0 0 1px rgba(79, 209, 255, 0.06);
+    --shadow-md: 0 4px 14px -2px rgb(0 0 0 / 0.5), 0 0 0 1px rgba(224, 30, 55, 0.04);
+    --shadow-lg: 0 18px 40px -12px rgb(0 0 0 / 0.7), 0 0 0 1px rgba(224, 30, 55, 0.06);
 
     color-scheme: dark;
   }
@@ -130,10 +130,10 @@
       --color-text-tertiary: #5c5c63;
       --color-text-inverse: #0a0a0b;
 
-      --color-accent: #22d3ee;
-      --color-accent-hover: #67e8f9;
-      --color-accent-subtle: rgba(34, 211, 238, 0.1);
-      --color-accent-glow: rgba(34, 211, 238, 0.3);
+      --color-accent: #e01e37;
+      --color-accent-hover: #ff4d63;
+      --color-accent-subtle: rgba(224, 30, 55, 0.1);
+      --color-accent-glow: rgba(224, 30, 55, 0.3);
 
       --color-accent-amber: #f5a524;
       --color-accent-amber-hover: #fbbf24;
@@ -141,7 +141,7 @@
       --color-accent-purple: #b794ff;
       --color-accent-purple-hover: #c9b0ff;
       --color-accent-purple-subtle: rgba(183, 148, 255, 0.12);
-      --color-accent-blue-subtle: rgba(79, 209, 255, 0.12);
+      --color-accent-blue-subtle: rgba(224, 30, 55, 0.12);
 
       --color-success: #3ddc97;
       --color-warning: #f5a524;
@@ -149,16 +149,16 @@
 
       --color-code-bg: #0c121a;
       --color-input-bg: #0c121a;
-      --color-input-border: rgba(79, 209, 255, 0.12);
+      --color-input-border: rgba(224, 30, 55, 0.12);
 
-      --color-user-bubble: rgba(79, 209, 255, 0.14);
+      --color-user-bubble: rgba(224, 30, 55, 0.14);
       --color-user-bubble-text: #e6f1ff;
       --color-on-accent: #070b11;
       --color-disabled-bg: #121a24;
 
       --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.4);
-      --shadow-md: 0 4px 14px -2px rgb(0 0 0 / 0.5), 0 0 0 1px rgba(79, 209, 255, 0.04);
-      --shadow-lg: 0 18px 40px -12px rgb(0 0 0 / 0.7), 0 0 0 1px rgba(79, 209, 255, 0.06);
+      --shadow-md: 0 4px 14px -2px rgb(0 0 0 / 0.5), 0 0 0 1px rgba(224, 30, 55, 0.04);
+      --shadow-lg: 0 18px 40px -12px rgb(0 0 0 / 0.7), 0 0 0 1px rgba(224, 30, 55, 0.06);
 
       color-scheme: dark;
     }
