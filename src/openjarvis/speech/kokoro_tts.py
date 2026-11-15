@@ -262,9 +262,12 @@ class KokoroTTSBackend(TTSBackend):
         output_format: str = "wav",
     ) -> TTSResult:
         import numpy as np
+        import re
         import soundfile as sf
 
         lang_code = self._lang_for_voice(voice_id)
+        # Ultron: force the pronunciation of the name instead of spelling it
+        text = re.sub(r"\bultron\b", "[Ultron](/\u02c8\u028clt\u0279\u0251n/)", text, flags=re.IGNORECASE)
         with self._pipeline_lock:
             pipeline = self._ensure_pipeline(lang_code)
             samples = []
