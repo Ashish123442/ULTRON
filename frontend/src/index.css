@@ -788,3 +788,37 @@ body::after {
 @media (prefers-reduced-motion: reduce) {
   body::before, body::after { animation: none; }
 }
+
+/* ULTRON logo and status eye */
+@keyframes ultron-ring-spin { to { transform: rotate(360deg); } }
+@keyframes ultron-eye-pulse { 50% { transform: scale(0.78); opacity: 0.7; } }
+@keyframes ultron-dot-live {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 4px 1px rgba(224, 30, 55, 0.4); }
+  50% { transform: scale(1.5); box-shadow: 0 0 14px 4px rgba(224, 30, 55, 0.9); }
+}
+.ultron-logo { position: relative; width: 64px; height: 64px; }
+.ultron-ring {
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #e01e37; border-bottom-color: #e01e37;
+  animation: ultron-ring-spin 4s linear infinite;
+}
+.ultron-ring-b {
+  inset: 9px;
+  border-top-color: transparent; border-bottom-color: transparent;
+  border-left-color: #e01e37; border-right-color: #e01e37;
+  animation-duration: 6s; animation-direction: reverse;
+}
+.ultron-eye {
+  position: absolute; inset: 22px; border-radius: 50%;
+  background: radial-gradient(circle, #fff 0 10%, #e01e37 25%, #5a0a16 70%, transparent 75%);
+  animation: ultron-eye-pulse 2.4s ease-in-out infinite;
+}
+.ultron-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #e01e37; opacity: 0.5; margin-left: 6px;
+}
+.ultron-dot-live { opacity: 1; animation: ultron-dot-live 0.9s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .ultron-ring, .ultron-eye, .ultron-dot-live { animation: none; }
+}
