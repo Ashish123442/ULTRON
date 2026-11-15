@@ -488,7 +488,7 @@ export const useAppStore = create<AppState>((set, get) => {
         // embedder and every chat failed with HTTP 400 "does not support
         // chat". Prefer a real chat model for selection / fallback.
         const chatModels = models.filter((m) => !isEmbedOnlyModel(m.id));
-        const preferred =
+        const preferred =          chatModels.find((m) => m.id === 'qwen3.5:2b')?.id ||
           (state.settings.defaultModel &&
             chatModels.some((m) => m.id === state.settings.defaultModel) &&
             state.settings.defaultModel) ||
