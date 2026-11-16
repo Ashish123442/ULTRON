@@ -12,7 +12,7 @@ declare global {
   }
 }
 
-export const isTauri = () => typeof window !== 'undefined' && !!window.__TAURI_INTERNALS__;
+export const isTauri = () => false; // Ultron shell loads the web UI, never use stock desktop mode
 
 export type CloudKeyStatus = Record<string, boolean>;
 

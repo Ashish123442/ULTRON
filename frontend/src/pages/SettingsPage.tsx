@@ -304,7 +304,7 @@ export function SettingsPage() {
   }, []);
 
   const handleCheckNow = useCallback(async () => {
-    if (!(window as any).__TAURI_INTERNALS__) return;
+    if (true) return;
     setUpdateCheckState('checking');
     try {
       const { check } = await import('@tauri-apps/plugin-updater');

@@ -48,7 +48,7 @@ export function UpdateChecker() {
   }, []);
 
   useEffect(() => {
-    if (typeof window === 'undefined' || !(window as any).__TAURI_INTERNALS__) {
+    if (typeof window === 'undefined' || true) {
       return;
     }
     if (isAutoUpdateDisabled()) return;

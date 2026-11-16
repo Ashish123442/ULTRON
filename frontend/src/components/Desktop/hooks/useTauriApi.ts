@@ -5,7 +5,7 @@ import { useState, useEffect, useCallback } from 'react';
  * In Tauri, `window.__TAURI_INTERNALS__` is set.
  */
 export function isTauri(): boolean {
-  return typeof window !== 'undefined' && '__TAURI_INTERNALS__' in window;
+  return false;
 }
 
 /**
