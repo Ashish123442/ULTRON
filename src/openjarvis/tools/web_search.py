@@ -715,7 +715,22 @@ class WebSearchTool(BaseTool):
                     success=False,
                 )
 
-        max_results = params.get("max_results", self._max_results)
+        max_results = min(int(params.get("max_results", self._max_results)), 3)
+        return self._cap_result(self._engine_search(query, max_results))
+
+    def _cap_result(self, result: ToolResult, max_chars: int = 1500) -> ToolResult:
+        """Keep search output small for the 4096-token local context."""
+        text = result.content or ""
+        if len(text) <= max_chars:
+            return result
+        return ToolResult(
+            tool_name=result.tool_name,
+            content=text[:max_chars].rstrip() + "\n[Results shortened]",
+            success=result.success,
+            metadata=result.metadata,
+        )
+
+    def _engine_search(self, query: str, max_results: int) -> ToolResult:
         engine = self._resolve_engine()
 
         if engine == "duckduckgo":
