@@ -17,6 +17,7 @@ import { OptInModal } from './components/OptInModal';
 import { UpdateChecker } from './components/Desktop/UpdateChecker';
 import { track, hashId } from './lib/analytics';
 import { offerAnalyticsChoice } from './lib/analytics-invitation';
+import { startGreeting } from './lib/greeting';
 
 export default function App() {
   const [setupDone, setSetupDone] = useState(!isTauri());
@@ -47,6 +48,9 @@ export default function App() {
   const setOptInModalOpen = useAppStore((s) => s.setOptInModalOpen);
   const markOptInModalSeen = useAppStore((s) => s.markOptInModalSeen);
   const savings = useAppStore((s) => s.savings);
+
+  // Ultron: spoken greeting from the PC clock
+  useEffect(() => startGreeting(), []);
 
   // Apply theme class to <html>
   useEffect(() => {
