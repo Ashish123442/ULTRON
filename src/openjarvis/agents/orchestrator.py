@@ -28,6 +28,26 @@ from openjarvis.tools._stubs import BaseTool
 logger = logging.getLogger(__name__)
 
 
+# ULTRON tool gate: a small model calls tools on trivial messages, so tools
+# are attached only when the user's message contains one of these words.
+_ULTRON_TOOL_WORDS = (
+    "search", "look up", "lookup", "google", "browse", "web", "internet",
+    "online", "website", "url", "http", "news", "weather", "run", "running",
+    "execute", "code", "coding", "program", "script", "python", "calculate",
+    "compute", "file", "folder", "directory", "read", "open", "command",
+    "terminal", "shell", "cmd", "powershell", "tool",
+)
+_ULTRON_TOOL_RE = re.compile(
+    r"\b(?:" + "|".join(w.replace(" ", r"\s*") for w in _ULTRON_TOOL_WORDS)
+    + r")(?:s|es|ing|ed)?\b",
+    re.IGNORECASE,
+)
+
+
+def _ultron_wants_tools(text: str) -> bool:
+    return bool(_ULTRON_TOOL_RE.search(text or ""))
+
+
 @AgentRegistry.register("orchestrator")
 class OrchestratorAgent(ToolUsingAgent):
     """Multi-turn agent that routes between tools and the LLM.
@@ -359,6 +379,9 @@ class OrchestratorAgent(ToolUsingAgent):
 
         # Get OpenAI-format tool definitions
         openai_tools = self._executor.get_openai_tools() if self._tools else []
+        # ULTRON tool gate: offer tools only when the message asks for them.
+        if openai_tools and not _ultron_wants_tools(input):
+            openai_tools = []
 
         all_tool_results: list[ToolResult] = []
         turns = 0
