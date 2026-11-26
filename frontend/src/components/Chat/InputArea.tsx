@@ -12,6 +12,8 @@ import {
 } from '../../lib/chat-telemetry';
 import { MicButton } from './MicButton';
 import { useSpeech } from '../../hooks/useSpeech';
+import { isWakeCall, wakeReply } from '../../lib/wake';
+import { useTtsStore } from '../../lib/tts';
 import type {
   ChatMessage,
   MessageTelemetry,
@@ -140,11 +142,28 @@ export function InputArea() {
     }
   }, [speechError]);
 
+  const answerWakeCall = useCallback((content: string) => {
+    const convId = activeId || createConversation(selectedModel);
+    addMessage(convId, { id: generateId(), role: 'user', content, timestamp: Date.now() });
+    const reply: ChatMessage = {
+      id: generateId(),
+      role: 'assistant',
+      content: wakeReply(),
+      timestamp: Date.now(),
+    };
+    addMessage(convId, reply);
+    if (useAppStore.getState().settings.voiceOutputEnabled) {
+      void useTtsStore.getState().speak(reply.id, reply.content);
+    }
+  }, [activeId, selectedModel, createConversation, addMessage]);
+
   const handleMicClick = useCallback(async () => {
     if (speechState === 'recording') {
       try {
         const text = await stopRecording();
-        if (text) {
+        if (text && !input.trim() && isWakeCall(text)) {
+          answerWakeCall(text);
+        } else if (text) {
           setInput((prev) => (prev ? prev + ' ' + text : text));
         }
       } catch {
@@ -153,7 +172,7 @@ export function InputArea() {
     } else {
       await startRecording();
     }
-  }, [speechState, startRecording, stopRecording]);
+  }, [speechState, startRecording, stopRecording, input, answerWakeCall]);
 
   useEffect(() => {
     const el = textareaRef.current;
@@ -174,6 +193,11 @@ export function InputArea() {
   const sendMessage = useCallback(async () => {
     const content = input.trim();
     if (!content || streamState.isStreaming) return;
+    if (isWakeCall(content)) {
+      setInput('');
+      answerWakeCall(content);
+      return;
+    }
     if (!selectedModel) {
       toast.error('Pick a model first (⌘K)');
       return;
@@ -552,6 +576,7 @@ export function InputArea() {
     deepResearch,
     temperature,
     maxTokens,
+    answerWakeCall,
   ]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
